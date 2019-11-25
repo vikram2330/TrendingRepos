@@ -1,0 +1,86 @@
+apply plugin: 'com.android.application'
+
+apply plugin: 'kotlin-android'
+
+apply plugin: 'kotlin-android-extensions'
+
+apply plugin: 'kotlin-kapt'
+
+android {
+    compileSdkVersion 29
+    buildToolsVersion "29.0.2"
+    defaultConfig {
+        applicationId "com.vikram.trendingrepos"
+        minSdkVersion 19
+        targetSdkVersion 29
+        versionCode 1
+        versionName "1.0"
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+    }
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+    dataBinding {
+        enabled = true
+    }
+}
+
+dependencies {
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+    implementation deps.legacy
+
+    implementation deps.constraintLayout
+    // Kotlin
+    implementation deps.kotlinsdk
+
+    // Android Support Libs
+    implementation deps.appcompatv7
+    implementation deps.design
+    implementation deps.cardview
+
+    // Play Services
+    implementation deps.location
+
+    // Dagger 2
+    implementation deps.dagger
+    implementation deps.daggerSupport
+    kapt deps.daggerCompiler
+    kapt deps.daggerProcessor
+    kaptTest deps.daggerCompiler
+
+    // Retrofit 2
+    implementation deps.retrofit
+    implementation deps.retrofitgson
+    implementation deps.retrofitrx
+    implementation deps.okhttplogger
+    // Rx
+    implementation deps.rxjava2
+    implementation deps.rxandroid2
+
+    // Glide
+    implementation deps.glide
+
+    implementation deps.archExtenstion
+    implementation deps.archViewmmodel
+    implementation deps.archLivdata
+    implementation deps.androidKtx
+    implementation deps.navigationFragment
+    implementation deps.navigationKtx
+
+    testImplementation deps.archTest
+
+    kapt deps.archCompiler
+    // UI Testing
+    androidTestImplementation(deps.espressocore, {
+        exclude group: 'com.android.support', module: 'support-annotations'
+    })
+    // Unit Testing
+    testImplementation deps.junit
+    testImplementation deps.mockitocore
+
+    implementation deps.coroutineCore
+    implementation deps.coroutineAndroid
+}
