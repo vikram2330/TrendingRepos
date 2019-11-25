@@ -56,7 +56,7 @@ ext {
     TEST_RUNNER = '1.1.1'
     ESPRESSO = '3.1.1'
     MOCKITO = '2.1.0'
-    MOCK_WEB_SERVER = '4.0.0'
+    MOCK_WEB_SERVER = '4.2.1'
     TRUTH = '0.32'
     NAV_VERSION = '2.1.0'
 
@@ -109,6 +109,7 @@ ext.deps = [archExtenstion    : "androidx.lifecycle:lifecycle-extensions:${LIFEC
             truth             : "com.google.truth:truth:${TRUTH}",
             espressocore      : "androidx.test.espresso:espresso-core:${ESPRESSO}",
             mockitocore       : "org.mockito:mockito-core:${MOCKITO}",
+            mockWebServer     : "com.squareup.okhttp3:mockwebserver:${MOCK_WEB_SERVER}",
 
             coroutineCore     : "org.jetbrains.kotlinx:kotlinx-coroutines-core:${COROUTINE_VERSION}",
             coroutineAndroid  : "org.jetbrains.kotlinx:kotlinx-coroutines-android:${COROUTINE_VERSION}"
