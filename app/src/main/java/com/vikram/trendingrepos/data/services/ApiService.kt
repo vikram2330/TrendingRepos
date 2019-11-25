@@ -6,5 +6,5 @@ import retrofit2.http.GET
 
 interface ApiService {
     @GET("/repositories")
-    fun getTrendingRepositories(): Single<TrendingRepositoryResponse>
+    fun getTrendingRepositories(): Single<List<TrendingRepositoryResponse>>
 }
