@@ -80,6 +80,7 @@ dependencies {
     // Unit Testing
     testImplementation deps.junit
     testImplementation deps.mockitocore
+    testImplementation deps.mockWebServer
 
     implementation deps.coroutineCore
     implementation deps.coroutineAndroid
