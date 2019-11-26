@@ -53,7 +53,8 @@ ext {
     MATERIAL = '1.0.0'
 
     JUNIT4 = '4.12'
-    TEST_RUNNER = '1.1.1'
+    TEST_RUNNER = '1.1.0'
+    TEST_CORE = '1.0.0'
     ESPRESSO = '3.1.1'
     MOCKITO = '2.1.0'
     MOCK_WEB_SERVER = '4.2.1'
@@ -110,6 +111,9 @@ ext.deps = [archExtenstion    : "androidx.lifecycle:lifecycle-extensions:${LIFEC
             espressocore      : "androidx.test.espresso:espresso-core:${ESPRESSO}",
             mockitocore       : "org.mockito:mockito-core:${MOCKITO}",
             mockWebServer     : "com.squareup.okhttp3:mockwebserver:${MOCK_WEB_SERVER}",
+            test_core         : "androidx.test:core:${TEST_CORE}",
+            test_rules        : "androidx.test:rules:${TEST_RUNNER}",
+            test_runner       : "androidx.test:runner:${TEST_RUNNER}",
 
             coroutineCore     : "org.jetbrains.kotlinx:kotlinx-coroutines-core:${COROUTINE_VERSION}",
             coroutineAndroid  : "org.jetbrains.kotlinx:kotlinx-coroutines-android:${COROUTINE_VERSION}"
