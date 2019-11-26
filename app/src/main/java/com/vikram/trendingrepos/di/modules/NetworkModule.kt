@@ -1,7 +1,7 @@
 package com.vikram.trendingrepos.di.modules
 
 import android.content.Context
-import com.accuweather.skyguard.injection.qualifiers.ApplicationContext
+import com.vikram.trendingrepos.di.qualifiers.ApplicationContext
 import com.vikram.trendingrepos.data.services.ApiService
 import com.vikram.trendingrepos.interceptors.NetworkResponseInterceptors
 import com.vikram.trendingrepos.utils.AppConstants
@@ -15,11 +15,11 @@ import retrofit2.converter.gson.GsonConverterFactory
 import javax.inject.Singleton
 
 @Module
-class NetworkModule {
+open class NetworkModule {
 
     @Provides
     @Singleton
-    internal fun provideOkHttpClient(@ApplicationContext context: Context): OkHttpClient {
+    internal open fun provideOkHttpClient(@ApplicationContext context: Context): OkHttpClient {
         val cacheSize: Long = 10 * 1024 * 1024 //10mb
         val httpBuilder = OkHttpClient.Builder()
         httpBuilder.cache(Cache(context.cacheDir, cacheSize))

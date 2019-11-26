@@ -1,8 +1,8 @@
 package com.vikram.trendingrepos.di.modules
 
 import android.content.Context
-import com.accuweather.skyguard.injection.qualifiers.ApplicationContext
 import com.vikram.trendingrepos.TrendingReposApp
+import com.vikram.trendingrepos.di.qualifiers.ApplicationContext
 import com.vikram.trendingrepos.utils.IRxSchedulers
 import dagger.Module
 import dagger.Provides
@@ -12,7 +12,7 @@ import javax.inject.Singleton
 
 
 @Module
-class ApplicationModule(private val app: TrendingReposApp) {
+open class ApplicationModule(private val app: TrendingReposApp) {
 
     @Provides
     @Singleton
@@ -25,6 +25,6 @@ class ApplicationModule(private val app: TrendingReposApp) {
 
     @Provides
     @ApplicationContext
-    fun provideAppContext(): Context = app.applicationContext
+    open fun provideAppContext(): Context = app.applicationContext
 
 }

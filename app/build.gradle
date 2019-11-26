@@ -26,6 +26,9 @@ android {
     dataBinding {
         enabled = true
     }
+    useLibrary 'android.test.runner'
+    useLibrary 'android.test.base'
+    useLibrary 'android.test.mock'
 }
 
 dependencies {
@@ -49,7 +52,9 @@ dependencies {
     implementation deps.daggerSupport
     kapt deps.daggerCompiler
     kapt deps.daggerProcessor
+    kaptTest deps.daggerProcessor
     kaptTest deps.daggerCompiler
+    kaptAndroidTest deps.daggerCompiler
 
     // Retrofit 2
     implementation deps.retrofit
@@ -81,6 +86,11 @@ dependencies {
     testImplementation deps.junit
     testImplementation deps.mockitocore
     testImplementation deps.mockWebServer
+    testImplementation deps.test_runner
+
+    androidTestImplementation deps.test_core
+    androidTestImplementation deps.test_runner
+    androidTestImplementation deps.test_rules
 
     implementation deps.coroutineCore
     implementation deps.coroutineAndroid

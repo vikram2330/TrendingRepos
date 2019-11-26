@@ -36,7 +36,7 @@ class ApiServiceTest {
     }
 
     @Test
-    fun getWeatherData() {
+    fun getRepositoryData() {
         mockWebServer.enqueue(MockResponse().setResponseCode(HttpURLConnection.HTTP_OK).setBody(getJson("trending_repositories_response_success.json")))
         val response = apiService.getTrendingRepositories().blockingGet()
         Assert.assertThat(response[0].author, CoreMatchers.`is`("google"))

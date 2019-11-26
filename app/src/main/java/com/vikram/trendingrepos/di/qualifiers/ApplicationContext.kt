@@ -1,4 +1,4 @@
-package com.accuweather.skyguard.injection.qualifiers
+package com.vikram.trendingrepos.di.qualifiers
 
 import javax.inject.Qualifier
 
