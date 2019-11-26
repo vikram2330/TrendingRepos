@@ -4,5 +4,5 @@ import com.vikram.trendingrepos.data.model.TrendingRepositoryResponse
 import io.reactivex.Single
 
 interface RemoteDataProvider {
-    fun getTrendingRepositories(): Single<List<TrendingRepositoryResponse>>
+    fun getTrendingRepositories(forceRefresh: Boolean = false): Single<List<TrendingRepositoryResponse>>
 }
