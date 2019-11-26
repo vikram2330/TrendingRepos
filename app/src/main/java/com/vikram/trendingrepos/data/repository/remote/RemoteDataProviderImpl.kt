@@ -8,7 +8,8 @@ import javax.inject.Inject
 class RemoteDataProviderImpl @Inject constructor(private val apiService: ApiService) :
     RemoteDataProvider {
 
-    override fun getTrendingRepositories(): Single<List<TrendingRepositoryResponse>> {
-        return apiService.getTrendingRepositories()
+    override fun getTrendingRepositories(forceRefresh: Boolean): Single<List<TrendingRepositoryResponse>> {
+        return if (forceRefresh) apiService.getTrendingRepositories("no-cache")
+        else apiService.getTrendingRepositories()
     }
 }

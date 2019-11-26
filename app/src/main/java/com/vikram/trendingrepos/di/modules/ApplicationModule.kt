@@ -12,7 +12,7 @@ import javax.inject.Singleton
 
 
 @Module
-class ApplicationModule {
+class ApplicationModule(private val app: TrendingReposApp) {
 
     @Provides
     @Singleton
@@ -25,6 +25,6 @@ class ApplicationModule {
 
     @Provides
     @ApplicationContext
-    fun provideAppContext(app: TrendingReposApp): Context = app.applicationContext
+    fun provideAppContext(): Context = app.applicationContext
 
 }
