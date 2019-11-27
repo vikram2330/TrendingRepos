@@ -21,7 +21,10 @@
         <item name="android:textSize">16sp</item>
         <item name="android:fontFamily">@font/roboto_medium</item>
     </style>
-
+<style name="Text.TitleLarge">
+    <item name="android:textSize">20sp</item>
+    <item name="android:fontFamily">@font/roboto_bold</item>
+</style>
     <style name="ErrorButton" parent="Widget.AppCompat.Button">
         <item name="android:textColor">@color/colorBtnStroke</item>
         <item name="android:background">@drawable/rounded_corner_btn</item>

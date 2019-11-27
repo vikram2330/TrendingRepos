@@ -9,33 +9,42 @@
             name="viewModel"
             type="com.vikram.trendingrepos.ui.homescreen.HomeViewModel" />
     </data>
-<androidx.swiperefreshlayout.widget.SwipeRefreshLayout
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:id="@+id/swipe_refresh">
-    <FrameLayout
+
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent"
+        android:orientation="vertical">
 
-        <com.vikram.trendingrepos.ui.customcomponents.LoadingComponent
-            android:id="@+id/view_Loading"
+        <include layout="@layout/layout_toolbar" />
+
+        <androidx.swiperefreshlayout.widget.SwipeRefreshLayout
+            android:id="@+id/swipe_refresh"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:visibility="gone"
-            />
+            android:layout_height="match_parent">
 
-        <androidx.recyclerview.widget.RecyclerView
-            android:id="@+id/rv_repository"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            tools:listitem="@layout/row_trending_repo"
-            />
+            <FrameLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
 
-        <include android:id="@+id/error_layout"
-            layout="@layout/layout_error"
-            android:visibility="gone" />
-    </FrameLayout>
-</androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
+                <com.vikram.trendingrepos.ui.customcomponents.LoadingComponent
+                    android:id="@+id/view_Loading"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:visibility="gone" />
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/rv_repository"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    tools:listitem="@layout/row_trending_repo" />
+
+                <include
+                    android:id="@+id/error_layout"
+                    layout="@layout/layout_error"
+                    android:visibility="gone" />
+            </FrameLayout>
+        </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
+    </LinearLayout>
 </layout>
