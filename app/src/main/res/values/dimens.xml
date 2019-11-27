@@ -32,5 +32,7 @@
     <dimen name="btn_stroke_width">2dp</dimen>
     <dimen name="error_screen_padding">16dp</dimen>
     <dimen name="error_title_top_margin">16dp</dimen>
+    <dimen name="toolbar_elevation">4dp</dimen>
+    <dimen name="toolbar_menu_trailing_margin">16dp</dimen>
 
 </resources>
