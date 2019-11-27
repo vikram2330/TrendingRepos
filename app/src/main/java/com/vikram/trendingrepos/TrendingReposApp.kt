@@ -1,14 +1,24 @@
 package com.vikram.trendingrepos
 
 import android.app.Application
+import com.vikram.trendingrepos.di.components.ApplicationComponent
 import com.vikram.trendingrepos.di.components.DaggerApplicationComponent
 import com.vikram.trendingrepos.di.modules.ApplicationModule
 
 
 class TrendingReposApp : Application() {
 
+    lateinit var applicationComponent: ApplicationComponent
+
     override fun onCreate() {
         super.onCreate()
-        DaggerApplicationComponent.builder().applicationModule(ApplicationModule(this)).build()
+        INSTANCE = this
+        applicationComponent = DaggerApplicationComponent.builder().applicationModule(ApplicationModule(this)).build()
+    }
+
+    companion object {
+        private var INSTANCE: TrendingReposApp? = null
+        @JvmStatic
+        fun get():TrendingReposApp = INSTANCE!!
     }
 }
