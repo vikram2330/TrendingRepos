@@ -8,4 +8,23 @@
         <item name="colorAccent">@color/colorAccent</item>
     </style>
 
+    <style name="Text">
+        <item name="android:textColor">@color/colorText</item>
+    </style>
+
+    <style name="Text.TitleSmall">
+        <item name="android:textSize">12sp</item>
+        <item name="android:fontFamily">@font/roboto_regular</item>
+    </style>
+
+    <style name="Text.TitleMedium">
+        <item name="android:textSize">16sp</item>
+        <item name="android:fontFamily">@font/roboto_medium</item>
+    </style>
+
+    <style name="ErrorButton" parent="Widget.AppCompat.Button">
+        <item name="android:textColor">@color/colorBtnStroke</item>
+        <item name="android:background">@drawable/rounded_corner_btn</item>
+    </style>
+
 </resources>

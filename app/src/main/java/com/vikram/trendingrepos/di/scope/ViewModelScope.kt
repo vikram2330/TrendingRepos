@@ -2,6 +2,7 @@ package com.vikram.trendingrepos.di.scope
 
 import androidx.lifecycle.ViewModel
 import dagger.MapKey
+import javax.inject.Scope
 import kotlin.reflect.KClass
 
 @MustBeDocumented

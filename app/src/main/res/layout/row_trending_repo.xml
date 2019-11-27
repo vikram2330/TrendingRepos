@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="@dimen/repo_item_padding">
+
+        <ImageView
+            android:id="@+id/iv_avatar"
+            android:layout_width="@dimen/avatar_diameter"
+            android:layout_height="@dimen/avatar_diameter"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/tv_username"
+            style="@style/Text.TitleSmall"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/username_leading_margin"
+            android:maxLines="1"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/iv_avatar"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/tv_repository_name"
+            style="@style/Text.TitleMedium"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/repository_name_top_margin"
+            android:maxLines="1"
+            app:layout_constraintEnd_toEndOf="@id/tv_username"
+            app:layout_constraintStart_toStartOf="@+id/tv_username"
+            app:layout_constraintTop_toBottomOf="@id/tv_username" />
+
+        <TextView
+            android:id="@+id/tv_desc"
+            style="@style/Text.TitleSmall"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/desc_top_margin"
+            android:maxLines="2"
+            app:layout_constraintEnd_toEndOf="@id/tv_repository_name"
+            app:layout_constraintStart_toStartOf="@+id/tv_username"
+            app:layout_constraintTop_toBottomOf="@id/tv_repository_name" />
+
+        <TextView
+            android:id="@+id/tv_language"
+            style="@style/Text.TitleSmall"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/language_top_margin"
+            android:drawableStart="@drawable/language_circle_drawable"
+            android:drawablePadding="@dimen/star_drawable_padding"
+            android:maxLines="1"
+            app:layout_constraintEnd_toStartOf="@id/guide_pre_star"
+            app:layout_constraintHorizontal_bias="0"
+            app:layout_constraintStart_toStartOf="@id/tv_desc"
+            app:layout_constraintTop_toBottomOf="@id/tv_desc" />
+
+        <TextView
+            android:id="@+id/tv_stars"
+            style="@style/Text.TitleSmall"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/fork_leading_margin"
+            android:layout_marginTop="@dimen/language_top_margin"
+            android:drawableStart="@drawable/star_yellow"
+            android:drawablePadding="@dimen/star_drawable_padding"
+            android:maxLines="1"
+            app:layout_constraintEnd_toEndOf="@id/guide_post_star"
+            app:layout_constraintHorizontal_bias="0"
+            app:layout_constraintStart_toEndOf="@+id/guide_pre_star"
+            app:layout_constraintTop_toBottomOf="@id/tv_desc" />
+
+        <TextView
+            android:id="@+id/tv_fork"
+            style="@style/Text.TitleSmall"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/star_leading_margin"
+            android:layout_marginTop="@dimen/language_top_margin"
+            android:drawableStart="@drawable/fork_black"
+            android:drawablePadding="@dimen/star_drawable_padding"
+            android:maxLines="1"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0"
+            app:layout_constraintStart_toEndOf="@+id/guide_post_star"
+            app:layout_constraintTop_toBottomOf="@id/tv_desc" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guide_pre_star"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.4" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guide_post_star"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.68" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

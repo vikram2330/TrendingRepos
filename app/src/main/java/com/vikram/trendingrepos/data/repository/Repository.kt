@@ -5,4 +5,5 @@ import io.reactivex.Single
 
 interface Repository {
     fun getTrendingRepositories(): Single<List<TrendingRepositoryResponse>>
+    fun getTrendingRepositoriesForceRefresh(): Single<List<TrendingRepositoryResponse>>
 }

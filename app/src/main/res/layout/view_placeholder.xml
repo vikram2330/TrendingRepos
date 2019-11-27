@@ -8,8 +8,8 @@
 
     <ImageView
         android:id="@+id/iv_avatar_placeholder"
-        android:layout_width="@dimen/avatar_diameter"
-        android:layout_height="@dimen/avatar_diameter"
+        android:layout_width="@dimen/placeholder_avatar_diameter"
+        android:layout_height="@dimen/placeholder_avatar_diameter"
         android:src="@drawable/round_viewholder"
         android:layout_marginStart="@dimen/placeholder_avatar_leading_margin"
         app:layout_constraintStart_toStartOf="parent"
@@ -21,7 +21,7 @@
         android:layout_height="@dimen/placeholder_username_height"
         android:layout_marginStart="@dimen/placeholder_username_leading_margin"
         android:layout_marginEnd="@dimen/placeholder_username_trailing_margin"
-        android:background="@color/background"
+        android:background="@drawable/placeholder_rectangle"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/iv_avatar_placeholder"
         app:layout_constraintTop_toTopOf="parent" />
@@ -31,7 +31,7 @@
         android:layout_width="0dp"
         android:layout_height="@dimen/placeholder_username_height"
         android:layout_marginTop="@dimen/placeholder_repository_top_margin"
-        android:background="@color/background"
+        android:background="@drawable/placeholder_rectangle"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="@+id/placeholder_username"
         app:layout_constraintEnd_toEndOf="@id/placeholder_username"

@@ -7,7 +7,11 @@ import javax.inject.Inject
 
 class RepositoryImpl @Inject constructor(private val remoteDataProvider: RemoteDataProvider) :
     Repository {
+    override fun getTrendingRepositoriesForceRefresh(): Single<List<TrendingRepositoryResponse>> {
+        return remoteDataProvider.getTrendingRepositories(true)
+    }
+
     override fun getTrendingRepositories(): Single<List<TrendingRepositoryResponse>> {
-    return  remoteDataProvider.getTrendingRepositories()
+        return remoteDataProvider.getTrendingRepositories()
     }
 }

@@ -6,8 +6,9 @@ import com.vikram.trendingrepos.di.modules.RepositoryModule
 import com.vikram.trendingrepos.di.modules.ViewModelModule
 import com.vikram.trendingrepos.ui.homescreen.HomeFragment
 import dagger.Component
+import javax.inject.Singleton
 
-
+@Singleton
 @Component(modules = [ApplicationModule::class, NetworkModule::class, RepositoryModule::class, ViewModelModule::class])
 interface ApplicationComponent {
     fun inject(target: HomeFragment)

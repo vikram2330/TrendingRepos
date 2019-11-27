@@ -12,7 +12,7 @@ class LoadingComponent(
 ) : LinearLayout(context, attrs) {
 
     init {
-       val binding = ComponentLoadingBinding.inflate(LayoutInflater.from(context))
+        val binding = ComponentLoadingBinding.inflate(LayoutInflater.from(context),this,false)
         addView(binding.root)
         binding.shimmerViewContainer.startShimmer()
     }
