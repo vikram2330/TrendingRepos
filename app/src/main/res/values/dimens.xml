@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="avatar_diameter">32dp</dimen>
+    <dimen name="placeholder_username_height">8dp</dimen>
+    <dimen name="placeholder_username_trailing_margin">36dp</dimen>
+    <dimen name="placeholder_username_leading_margin">16dp</dimen>
+    <dimen name="placeholder_username_top_margin">21dp</dimen>
+    <dimen name="placeholder_username_bottom_margin">16dp</dimen>
+    <dimen name="placeholder_repository_bottom_margin">21dp</dimen>
+    <dimen name="placeholder_top_padding">21dp</dimen>
+    <dimen name="placeholder_bottom_padding">21dp</dimen>
+    <dimen name="placeholder_repository_top_margin">16dp</dimen>
+    <dimen name="placeholder_avatar_leading_margin">18dp</dimen>
+    <dimen name="divider_height">1dp</dimen>
+</resources>

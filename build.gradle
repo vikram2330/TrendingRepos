@@ -51,6 +51,7 @@ ext {
     LOCATION = '17.0.0'
     GLIDE = '3.8.0'
     MATERIAL = '1.0.0'
+    SHIMMER = '0.5.0'
 
     JUNIT4 = '4.12'
     TEST_RUNNER = '1.1.0'
@@ -116,6 +117,8 @@ ext.deps = [archExtenstion    : "androidx.lifecycle:lifecycle-extensions:${LIFEC
             test_runner       : "androidx.test:runner:${TEST_RUNNER}",
 
             coroutineCore     : "org.jetbrains.kotlinx:kotlinx-coroutines-core:${COROUTINE_VERSION}",
-            coroutineAndroid  : "org.jetbrains.kotlinx:kotlinx-coroutines-android:${COROUTINE_VERSION}"
+            coroutineAndroid  : "org.jetbrains.kotlinx:kotlinx-coroutines-android:${COROUTINE_VERSION}",
+
+            shimmer           : "com.facebook.shimmer:shimmer:${SHIMMER}"
 
 ]
