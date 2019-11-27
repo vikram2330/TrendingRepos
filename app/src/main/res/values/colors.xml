@@ -4,4 +4,8 @@
     <color name="colorPrimaryDark">#FFFFFF</color>
     <color name="colorAccent">#25282B</color>
     <color name="background">#DDDDDD</color>
+    <color name="colorText">#25282B</color>
+    <color name="colorBtnStroke">#00B300</color>
+    <color name="colorTransparent">#00ffffff</color>
+
 </resources>
