@@ -34,5 +34,6 @@
     <dimen name="error_title_top_margin">16dp</dimen>
     <dimen name="toolbar_elevation">4dp</dimen>
     <dimen name="toolbar_menu_trailing_margin">16dp</dimen>
+    <dimen name="toolbar_more_icon_padding">16dp</dimen>
 
 </resources>

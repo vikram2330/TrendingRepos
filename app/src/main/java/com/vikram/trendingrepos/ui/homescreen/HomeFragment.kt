@@ -4,12 +4,14 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.appcompat.widget.PopupMenu
 import androidx.lifecycle.Observer
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.vikram.trendingrepos.R
 import com.vikram.trendingrepos.TrendingReposApp
 import com.vikram.trendingrepos.data.model.NetworkResponse
+import com.vikram.trendingrepos.data.model.SortType
 import com.vikram.trendingrepos.databinding.FragmentHomeBinding
 import com.vikram.trendingrepos.ui.base.BaseFragment
 import com.vikram.trendingrepos.utils.hide
@@ -28,6 +30,7 @@ class HomeFragment : BaseFragment<HomeViewModel, FragmentHomeBinding>() {
         savedInstanceState: Bundle?
     ): View {
         TrendingReposApp.get().applicationComponent.inject(this)
+        setHasOptionsMenu(true)
         return super.onCreateView(inflater, container, savedInstanceState)
     }
 
@@ -38,6 +41,7 @@ class HomeFragment : BaseFragment<HomeViewModel, FragmentHomeBinding>() {
     }
 
     private fun initUI() {
+        binding.toolbarLayout.ivMore.setOnClickListener { showPopupMenu(binding.toolbarLayout.ivMore) }
         binding.rvRepository.layoutManager =
             LinearLayoutManager(context, RecyclerView.VERTICAL, false)
         binding.rvRepository.setDivider(R.drawable.divider_drawable)
@@ -83,12 +87,27 @@ class HomeFragment : BaseFragment<HomeViewModel, FragmentHomeBinding>() {
         binding.errorLayout.root.hide()
     }
 
-    fun loadList(list: List<RepositoryItem>) {
+    private fun loadList(list: List<RepositoryItem>) {
         binding.viewLoading.hide()
         binding.rvRepository.show()
         binding.errorLayout.root.hide()
         binding.rvRepository.adapter = RepositoryAdapter(list)
     }
 
+    private fun showPopupMenu(view: View) = PopupMenu(view.context, view).run {
+        menuInflater.inflate(R.menu.sort_item_list, menu)
+        setOnMenuItemClickListener { item ->
+            when (item.itemId) {
+                R.id.menu_name -> {
+                    viewModel.sortRepoList(SortType.SortByName)
+                }
+                R.id.menu_stars -> {
+                    viewModel.sortRepoList(SortType.SortByStars)
+                }
+            }
+            true
+        }
+        show()
+    }
 
 }
