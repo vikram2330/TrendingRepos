@@ -37,7 +37,7 @@ class HomeViewModel @Inject constructor(
      *
      */
     fun forceRefreshRepositories() {
-        val disposable = repository.getTrendingRepositories().subscribeOn(iRxSchedulers.io())
+        val disposable = repository.getTrendingRepositoriesForceRefresh().subscribeOn(iRxSchedulers.io())
             .observeOn(iRxSchedulers.main()).doOnSubscribe {
                 responseLiveData.value = NetworkResponse.Loading
             }.subscribe({ repositories ->
