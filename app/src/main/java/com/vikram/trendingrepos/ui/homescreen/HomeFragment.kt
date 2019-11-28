@@ -13,6 +13,7 @@ import com.vikram.trendingrepos.data.model.NetworkResponse
 import com.vikram.trendingrepos.databinding.FragmentHomeBinding
 import com.vikram.trendingrepos.ui.base.BaseFragment
 import com.vikram.trendingrepos.utils.hide
+import com.vikram.trendingrepos.utils.setDivider
 import com.vikram.trendingrepos.utils.show
 
 class HomeFragment : BaseFragment<HomeViewModel, FragmentHomeBinding>() {
@@ -39,6 +40,7 @@ class HomeFragment : BaseFragment<HomeViewModel, FragmentHomeBinding>() {
     private fun initUI() {
         binding.rvRepository.layoutManager =
             LinearLayoutManager(context, RecyclerView.VERTICAL, false)
+        binding.rvRepository.setDivider(R.drawable.divider_drawable)
         initObservers()
         initListeners()
     }

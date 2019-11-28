@@ -4,13 +4,16 @@ import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.vikram.trendingrepos.databinding.RowTrendingRepoBinding
+import com.vikram.trendingrepos.utils.hide
 import com.vikram.trendingrepos.utils.setDrawableStartColor
 import com.vikram.trendingrepos.utils.setRoundedImage
+import com.vikram.trendingrepos.utils.show
 
 class RepositoryAdapter(private val list: List<RepositoryItem>?) :
     RecyclerView.Adapter<RepositoryAdapter.RepositoryItemViewHolder>() {
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): RepositoryItemViewHolder {
-        val binding = RowTrendingRepoBinding.inflate(LayoutInflater.from(parent.context),parent,false)
+        val binding =
+            RowTrendingRepoBinding.inflate(LayoutInflater.from(parent.context), parent, false)
         return RepositoryItemViewHolder(binding)
     }
 
@@ -19,6 +22,13 @@ class RepositoryAdapter(private val list: List<RepositoryItem>?) :
     }
 
     override fun onBindViewHolder(holder: RepositoryItemViewHolder, position: Int) {
+        holder.setOnItemClick {
+            val repositoryItem = list?.get(position)
+            repositoryItem?.let {
+                it.isExpanded = !it.isExpanded
+            }
+            notifyItemChanged(position)
+        }
         holder.bind(list?.get(position))
     }
 
@@ -37,7 +47,18 @@ class RepositoryAdapter(private val list: List<RepositoryItem>?) :
                     tvDesc.text = it.repoDesc
                     it.languageColor?.let { binding.tvLanguage.setDrawableStartColor(it) }
                     it.avatarUrl?.let { binding.ivAvatar.setRoundedImage(it) }
+                    if (it.isExpanded) {
+                        expansionGroup.show()
+                    } else {
+                        expansionGroup.hide()
+                    }
                 }
+            }
+        }
+
+        fun setOnItemClick(onClick: () -> Unit) {
+            binding.root.setOnClickListener {
+                onClick.invoke()
             }
         }
     }
