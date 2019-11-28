@@ -104,5 +104,12 @@
             android:layout_height="match_parent"
             android:orientation="vertical"
             app:layout_constraintGuide_percent="0.68" />
+
+        <androidx.constraintlayout.widget.Group
+            android:id="@+id/expansion_Group"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:visibility="gone"
+            app:constraint_referenced_ids="tv_desc,tv_stars,tv_fork,tv_language" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>

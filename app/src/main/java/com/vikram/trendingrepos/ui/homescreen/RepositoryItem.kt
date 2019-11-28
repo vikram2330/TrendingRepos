@@ -8,5 +8,6 @@ data class RepositoryItem(
     val languageColor: String?,
     val stars: Int = 0,
     val forks: Int = 0,
-    val avatarUrl: String?
+    val avatarUrl: String?,
+    var isExpanded: Boolean = false
 )
