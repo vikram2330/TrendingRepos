@@ -1,18 +1,19 @@
 package com.vikram.trendingrepos.di.modules
 
 import android.content.Context
-import com.vikram.trendingrepos.di.qualifiers.ApplicationContext
 import com.vikram.trendingrepos.data.services.ApiService
+import com.vikram.trendingrepos.di.qualifiers.ApplicationContext
 import com.vikram.trendingrepos.interceptors.NetworkResponseInterceptors
 import com.vikram.trendingrepos.utils.AppConstants
 import dagger.Module
 import dagger.Provides
-import okhttp3.Cache
-import okhttp3.OkHttpClient
+import okhttp3.*
 import retrofit2.Retrofit
 import retrofit2.adapter.rxjava2.RxJava2CallAdapterFactory
 import retrofit2.converter.gson.GsonConverterFactory
+import java.util.*
 import javax.inject.Singleton
+
 
 @Module
 open class NetworkModule {
