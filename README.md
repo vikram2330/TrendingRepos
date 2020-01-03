@@ -1,4 +1,5 @@
 # Trending Repos
+Sample repository to showcase the use MVVM architecture.
 
 ## Code Style
 
